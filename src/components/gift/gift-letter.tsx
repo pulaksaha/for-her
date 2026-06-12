@@ -10,15 +10,14 @@ gsap.registerPlugin(ScrollTrigger);
 // Write your letter here. Use \n\n for new paragraphs.
 const LETTER_LINES = [
   "My love,", // ← Salutation
-  "I wanted to write this down somewhere beautiful, because the words I say out loud never come out right. They get tangled up in how much I mean them.",
+  "Mujhe nahi pata ki yeh letter kahan se shuru karun, kyunki tumhare baare mein likhne baithta hoon toh har yaad ek saath saamne aa jaati hai.",
   // ↓ Replace every paragraph below with your own words
-  "[Write your opening paragraph here. Tell her what made you want to create this. Keep it honest — the imperfect sentences are the ones that land.]",
-  "[Second paragraph. A specific memory, a feeling, something only she would understand. Maybe the moment you knew. Maybe just a Tuesday.]",
-  "[Tell her what you love about her — not in a list, but in the way you actually feel it. The small things. The big things. The everything.]",
-  "[What you're looking forward to. What you hope for. The life you're building sentence by sentence, day by day.]",
-  "I love you. More than I know how to say, but I tried.",
-  "Yours,", // ← Sign-off
-  "Your Name", // ← Replace with your name
+  "Kabhi socha nahi tha ki saalon baad tum meri zindagi ka itna bada hissa ban jaogi. Jo baat ek simple mulaqat se shuru hui thi, woh dheere dheere meri aadat ban gayi. Tumse baat karna, tumhara intezaar karna, tumhari khushi mein khush hona — sab kuch itna naturally hone laga ki mujhe pata hi nahi chala kab tum meri duniya ban gayi.Aaj bhi hamari pehli date yaad hai. Itni mushkilon ke baad hum mil paaye the, aur waqt bhi bahut kam tha. Lekin us chhote se waqt ne mujhe itni khushi di thi jitni shayad main lafzon mein kabhi bata nahi paunga. Kaash us din waqt thoda aur ruk jaata.",
+  "Aur phir woh ride... woh safar aaj bhi meri sabse pasandida yaadon mein se ek hai. Mujhe raaste yaad nahi, mujhe bas tum yaad ho. Aur sabse zyada yaad hai woh aakhri hug. Shayad tumhare liye woh sirf ek hug tha, lekin mere liye usmein ek sukoon tha jo maine pehle kabhi mehsoos nahi kiya tha. Aaj bhi jab us pal ko yaad karta hoon, dil bhar aata hai.",
+  "Tumhari wajah se maine bahut saari chhoti chhoti cheezon ko pyaar karna seekha. Random conversations, late replies ka intezaar, achanak aayi hui smile, aur woh moments jo shayad kisi aur ke liye normal honge, par mere liye bahut khaas the.Pata nahi aaj hum kahan khade hain. Shayad zindagi ne hume alag raaston par laakar khada kar diya hai. Lekin ek baat hamesha sach rahegi — tum meri zindagi ka woh hissa ho jise main kabhi bhool nahi paunga. Kuch log saath na rehkar bhi dil mein hamesha rehte hain, aur tum unmein se ho.",
+  "Agar mujhe dobara sab kuch jeene ka mauka mile, toh main har woh pal phir se jeena chahunga — tumse milna, tumhare saath woh chhota sa waqt bitana, woh ride, aur woh aakhri hug.Thank you for being one of the most beautiful parts of my life.",
+  "Always Yours,", // ← Sign-off
+  "Pulak🤍🥹", // ← Replace with your name
 ];
 // ─────────────────────────────────────────────────────────────────────────────
 
