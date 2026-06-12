@@ -206,17 +206,17 @@ export function GiftTimeline() {
 
   return (
     <section
-      className="relative py-32 px-6 sm:px-12 lg:px-20"
+      className="relative py-20 px-4 sm:py-32 sm:px-12 lg:px-20"
       aria-labelledby="timeline-heading"
     >
       {/* Section label */}
-      <div className="mb-20 text-center">
+      <div className="mb-12 sm:mb-20 text-center">
         <p className="mb-4 font-display text-xs tracking-[0.55em] text-verse-gold/70 uppercase">
           Our Story
         </p>
         <h2
           id="timeline-heading"
-          className="font-display text-[clamp(2.5rem,7vw,5rem)] font-light leading-[0.95] text-verse-cream"
+          className="font-display text-[clamp(2rem,7vw,5rem)] font-light leading-[0.95] text-verse-cream"
         >
           The moments that
           <br />
@@ -233,7 +233,7 @@ export function GiftTimeline() {
         />
 
         {/* Timeline entries */}
-        <div className="flex flex-col gap-20 md:gap-28">
+        <div className="flex flex-col gap-16 md:gap-28">
           {TIMELINE_EVENTS.map((event, i) => (
             <TimelineEntry key={event.date + i} {...event} index={i} />
           ))}

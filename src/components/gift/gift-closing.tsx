@@ -91,7 +91,7 @@ export function GiftClosing() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden py-32 px-6 text-center"
+      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden py-20 px-4 sm:py-32 sm:px-6 text-center"
       aria-label="Closing"
     >
       {/* Background image with Framer parallax */}
@@ -125,7 +125,7 @@ export function GiftClosing() {
           Always
         </p>
 
-        <h2 className="font-display text-[clamp(3rem,10vw,7rem)] font-light leading-[0.92] tracking-[-0.02em] text-verse-cream">
+        <h2 className="font-display text-[clamp(2.6rem,10vw,7rem)] font-light leading-[0.92] tracking-[-0.02em] text-verse-cream">
           <span className="closing-line block opacity-0">{CLOSING_LINE_1}</span>
           <span className="closing-line block italic text-verse-cream-muted opacity-0">
             {CLOSING_LINE_2}
@@ -133,7 +133,7 @@ export function GiftClosing() {
           <span className="closing-line block opacity-0">{CLOSING_LINE_3}</span>
         </h2>
 
-        <p className="closing-line mt-12 font-display text-2xl italic tracking-wide text-verse-gold opacity-0">
+        <p className="closing-line mt-10 font-display text-xl sm:text-2xl italic tracking-wide text-verse-gold opacity-0">
           {CLOSING_FOOTER}
         </p>
 
@@ -143,7 +143,7 @@ export function GiftClosing() {
             <p className="mb-5 text-xs tracking-[0.4em] text-verse-cream-faint uppercase">
               {COUNTDOWN.label}
             </p>
-            <div className="flex items-start justify-center gap-6 sm:gap-10">
+            <div className="flex items-start justify-center gap-4 sm:gap-10">
               {[
                 { value: countdown.days, label: "Days" },
                 { value: countdown.hours, label: "Hrs" },

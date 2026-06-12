@@ -117,8 +117,8 @@ export function BloomingBackground() {
       <svg
         viewBox="0 0 1440 900"
         preserveAspectRatio="xMidYMax meet"
-        className="absolute bottom-0 left-0 w-full"
-        style={{ minHeight: "72vh", maxHeight: "92vh", opacity: 0.88 }}
+        className="absolute bottom-0 left-0 w-full opacity-60 sm:opacity-80"
+        style={{ minHeight: "55vh", maxHeight: "90vh" }}
         aria-hidden="true"
       >
         <defs>

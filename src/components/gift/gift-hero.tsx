@@ -169,7 +169,7 @@ export function GiftHero() {
       {/* ── Text content ───────────────────────────────────────────── */}
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
-        className="relative z-10 flex h-full flex-col justify-between px-6 pb-16 pt-28 sm:px-12 lg:px-20"
+        className="relative z-10 flex h-full flex-col justify-between px-4 pb-12 pt-24 sm:px-10 lg:px-20"
       >
         {/* Date */}
         <p
@@ -180,12 +180,12 @@ export function GiftHero() {
           {TOGETHER_SINCE}
         </p>
 
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12 w-full">
+        <div className="flex flex-col gap-8 w-full md:flex-row md:items-center md:justify-between">
           {/* Names */}
           <div className="max-w-3xl">
             <h1
               ref={nameRef}
-              className="font-display text-[clamp(3rem,12vw,8rem)] leading-[0.9] font-light tracking-[-0.025em] text-verse-cream opacity-0"
+              className="font-display text-[clamp(2.8rem,11vw,8rem)] leading-[0.88] font-light tracking-[-0.025em] text-verse-cream opacity-0"
             >
               <span className="italic" style={{ color: "var(--petal-soft)" }}>
                 {HER_NAME}
@@ -203,7 +203,7 @@ export function GiftHero() {
           {/* Childhood Photo */}
           <div 
             ref={photoRef} 
-            className="relative w-56 h-72 md:w-72 md:h-[22rem] shrink-0 rounded-sm overflow-hidden border-4 border-[#1a0a14] shadow-[0_20px_60px_rgba(0,0,0,0.6)] opacity-0 transform rotate-2 md:mr-16"
+            className="relative w-44 h-60 sm:w-56 sm:h-72 md:w-72 md:h-[22rem] shrink-0 rounded-sm overflow-hidden border-4 border-[#1a0a14] shadow-[0_20px_60px_rgba(0,0,0,0.6)] opacity-0 transform rotate-2 self-start md:self-auto md:mr-16"
           >
             <div className="absolute inset-0 bg-verse-gold/5 animate-pulse" />
             <div
