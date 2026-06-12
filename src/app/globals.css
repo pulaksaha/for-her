@@ -1,26 +1,209 @@
 @import "tailwindcss";
 
+/* ─── Pink Blooming Night Palette ──────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Backgrounds — deep plum-rose darkness */
+  --verse-void:     #0a0608;
+  --verse-night:    #100810;
+  --verse-surface:  #180e18;
+  --verse-elevated: #221422;
+  --verse-border:   rgba(236, 175, 195, 0.10);
+  --verse-glow:     rgba(220, 130, 165, 0.18);
+
+  /* Text — soft ivory with the faintest blush */
+  --verse-cream:       #fdf0f4;
+  --verse-cream-muted: #d4b8c2;
+  --verse-cream-faint: #9a7a88;
+
+  /* Accent — rose, petal pink, and blush mauve */
+  --verse-gold:      #e8a0b8;   /* was gold → now petal rose */
+  --verse-gold-soft: #c47090;   /* deeper rose */
+  --verse-ember:     #8b3a5a;   /* deep magenta-rose */
+  --verse-rose:      #d46090;   /* vivid blossom */
+
+  /* Extra petal shades */
+  --petal-blush:    #f5c2d5;
+  --petal-soft:     #e88aac;
+  --petal-deep:     #b05070;
+  --petal-lavender: #c890c8;
+
+  --verse-radius-sm: 0.5rem;
+  --verse-radius:    1rem;
+  --verse-radius-lg: 1.5rem;
+  --verse-radius-xl: 2rem;
+
+  --verse-shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.55);
+  --verse-shadow-glow: 0 0 120px rgba(220, 130, 165, 0.12);
+
+  --background: var(--verse-void);
+  --foreground: var(--verse-cream);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-verse-void:     var(--verse-void);
+  --color-verse-night:    var(--verse-night);
+  --color-verse-surface:  var(--verse-surface);
+  --color-verse-elevated: var(--verse-elevated);
+  --color-verse-border:   var(--verse-border);
+
+  --color-verse-cream:        var(--verse-cream);
+  --color-verse-cream-muted:  var(--verse-cream-muted);
+  --color-verse-cream-faint:  var(--verse-cream-faint);
+
+  --color-verse-gold:      var(--verse-gold);
+  --color-verse-gold-soft: var(--verse-gold-soft);
+  --color-verse-ember:     var(--verse-ember);
+  --color-verse-rose:      var(--verse-rose);
+
+  --color-petal-blush:    var(--petal-blush);
+  --color-petal-soft:     var(--petal-soft);
+  --color-petal-deep:     var(--petal-deep);
+  --color-petal-lavender: var(--petal-lavender);
+
+  --font-display: var(--font-cormorant);
+  --font-sans:    var(--font-instrument);
+  --font-mono:    ui-monospace, monospace;
+
+  --radius-verse:    var(--verse-radius);
+  --radius-verse-lg: var(--verse-radius-lg);
+  --radius-verse-xl: var(--verse-radius-xl);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+.font-display {
+  font-family: var(--font-cormorant), Georgia, "Times New Roman", serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--verse-void);
+  color: var(--verse-cream);
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(220, 130, 165, 0.28);
+  color: var(--verse-cream);
+}
+
+/* ─── Floating Petal Keyframes ───────────────────────────────────────────────*/
+@keyframes petal-fall-1 {
+  0%   { transform: translateY(-5vh) translateX(0px) rotate(0deg) scale(1);   opacity: 0; }
+  5%   { opacity: 0.75; }
+  80%  { opacity: 0.55; }
+  100% { transform: translateY(105vh) translateX(60px) rotate(540deg) scale(0.7); opacity: 0; }
+}
+@keyframes petal-fall-2 {
+  0%   { transform: translateY(-5vh) translateX(0px) rotate(20deg) scale(1);   opacity: 0; }
+  5%   { opacity: 0.65; }
+  80%  { opacity: 0.4; }
+  100% { transform: translateY(105vh) translateX(-80px) rotate(-480deg) scale(0.6); opacity: 0; }
+}
+@keyframes petal-fall-3 {
+  0%   { transform: translateY(-5vh) translateX(0px) rotate(-15deg) scale(0.9); opacity: 0; }
+  5%   { opacity: 0.8; }
+  75%  { opacity: 0.5; }
+  100% { transform: translateY(105vh) translateX(40px) rotate(420deg) scale(0.55); opacity: 0; }
+}
+@keyframes petal-sway {
+  0%, 100% { margin-left: 0; }
+  50%       { margin-left: 30px; }
+}
+
+/* ─── Petal classes ───────────────────────────────────────────────────────── */
+.petal {
+  position: absolute;
+  top: -40px;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+.petal-1 { animation: petal-fall-1 var(--dur,12s) var(--delay,0s) infinite linear; }
+.petal-2 { animation: petal-fall-2 var(--dur,15s) var(--delay,0s) infinite linear; }
+.petal-3 { animation: petal-fall-3 var(--dur,10s) var(--delay,0s) infinite linear; }
+
+/* ─── Ambient rose glow pulse ────────────────────────────────────────────────*/
+@keyframes rose-glow-pulse {
+  0%, 100% { opacity: 0.12; transform: scale(1); }
+  50%       { opacity: 0.26; transform: scale(1.4); }
+}
+.rose-glow-ambient {
+  animation: rose-glow-pulse 6s ease-in-out infinite;
+}
+
+/* ─── Petal sway while falling ───────────────────────────────────────────────*/
+@keyframes petal-sway {
+  0%, 100% { transform: translateX(0px); }
+  25%       { transform: translateX(18px); }
+  75%       { transform: translateX(-18px); }
+}
+
+/* ─── Cinematic grain ────────────────────────────────────────────────────────*/
+.verse-grain::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── Editorial prose ────────────────────────────────────────────────────────*/
+.verse-prose {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.75;
+  color: var(--verse-cream-muted);
+}
+.verse-prose strong {
+  color: var(--verse-cream);
+  font-weight: 500;
+}
+
+:focus-visible {
+  outline: 2px solid var(--petal-soft);
+  outline-offset: 3px;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────────*/
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(220, 130, 165, 0.18);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 130, 165, 0.32);
+}
+
+/* ─── Section isolation ──────────────────────────────────────────────────────*/
+.landing-film section,
+.gift-film section { isolation: isolate; }
+
+/* ─── Separator ──────────────────────────────────────────────────────────────*/
+.verse-separator {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--petal-soft), transparent);
+  opacity: 0.28;
+  margin-inline: auto;
+  max-width: 24rem;
+}
+
+/* ─── Dashboard ──────────────────────────────────────────────────────────────*/
+.dashboard-world { --dashboard-gutter: clamp(1rem, 4vw, 2.5rem); }
+.dashboard-world main { min-height: calc(100svh - 4rem); }
+
+/* ─── Timeline spine ─────────────────────────────────────────────────────────*/
+.cinematic-timeline-spine {
+  mask-image: linear-gradient(to bottom, transparent, black 8%, black 92%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-world *, .landing-film *, .petal { animation: none !important; }
 }
