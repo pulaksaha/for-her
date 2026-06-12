@@ -122,3 +122,5 @@ src/
 ```
 
 The rest of the project (marketing page, app, etc.) is untouched.
+
+...
